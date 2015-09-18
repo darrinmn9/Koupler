@@ -58,6 +58,7 @@ angular.module('koupler.profile', [])
 });
 =======
   vm.uploadFiles = function(file) {
+    console.log(file);
     vm.f = file;
     if (file && !file.$error) {
       file.upload = Upload.upload({
