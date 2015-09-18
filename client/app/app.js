@@ -4,21 +4,22 @@ angular.module('koupler', [
   'koupler.auth',
   'koupler.couples',
   'koupler.profile',
-  'ngRoute',
   'ui.router',
-  'ui.bootstrap'
+  'ngRoute',
+  'ui.bootstrap',
+  'ngFileUpload'
 ])
 .config(function($stateProvider, $urlRouterProvider, $routeProvider, $httpProvider) {
-  
+
   $urlRouterProvider.otherwise('/');
-  
+
   $stateProvider
     .state('home', {
       templateUrl: 'app/auth/homepage.html',
       url:'/',
       controller: 'AuthCtrl'
     })
-    .state('profile', {
+    .state('profile/:username', {
       url:'/profile',
       controller: 'ProfileCtrl',
       views: {
@@ -50,7 +51,7 @@ angular.module('koupler', [
       templateUrl: 'app/profile/publicProfile',
       url: '/profile/public:username',
       controller: 'PublicProfileCtrl',
-    })
+    });
 
 
   // $routeProvider
@@ -58,7 +59,7 @@ angular.module('koupler', [
   //     templateUrl: 'app/auth/homepage.html',
   //     controller: 'AuthCtrl'
   //   })
-  //   .when('/activities', {
+  //   .when('/activities/:username', {
   //     templateUrl: 'app/activityPickerCtrl/activityPicker.html',
   //     controller: 'ActivityPickerCtrl',
   //     authenticate: true,
