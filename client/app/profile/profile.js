@@ -30,33 +30,21 @@ angular.module('koupler.profile', [])
   vm.getProfileInfo = function() {
     var token = AuthTokenFactory.getToken();
     //GET request should respond with user's profile picture, interests, about, memories, etc.
-<<<<<<< HEAD
-    $http.get('/profile', {params: 
+
+    $http.get('/profile', {params:
       {token: token}
-=======
-    $http.get('/profile', {
-      token: token
->>>>>>> (feature) added image upload for profile pic
     })
       .then(function(response) {
         if (response.data.isAuthorized) {
           vm.isAuthorized = true;
         }
-<<<<<<< HEAD
-        vm.profileData = response.data; //looks like [{about us: "", username: ""}] 
+        vm.profileData = response.data; //looks like [{about us: "", username: ""}]
         console.log(vm.profileData);
       })
-=======
-        vm.profileData = response.data;
-      });
->>>>>>> (feature) added image upload for profile pic
   };
 
   vm.getProfileInfo();
 
-<<<<<<< HEAD
-});
-=======
   vm.uploadFiles = function(file) {
     console.log(file);
     vm.f = file;
@@ -75,4 +63,4 @@ angular.module('koupler.profile', [])
     }
   };
 });
->>>>>>> (feature) added image upload for profile pic
+
