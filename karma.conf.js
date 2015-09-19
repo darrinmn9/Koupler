@@ -8,16 +8,22 @@ module.exports = function(config){
 
     files: [
     'node_modules/angular/angular.min.js',
+    'client/app/bower_components/angular-ui-router/**/*.js',
+    'client/app/bower_components/angular-bootstrap/*.js',
+    'client/app/bower_components/ng-file-upload/ng-file-upload.min.js',
     'node_modules/angular-mocks/angular-mocks.js',
 
     //our app code
+    'client/app/app.js',
+    'client/app/navbar/*.js',
+    'client/app/factories/*.js',
     'client/app/**/*.js',
 
     //our templates
-    'client/app/**/*.html',
+    // 'client/app/**/*.html',
 
     //our spec files
-    'specs/client/**/*.js',
+    'specs/client/*.js',
     ],
 
     exclude: [
@@ -26,7 +32,7 @@ module.exports = function(config){
 
     preprocessors: {
       // 'client/app/**/*.html': ['ng-html12js'],
-      'client/app/**/*.js': ['coverage']
+      // 'client/app/**/*.js': ['coverage']
     },
 
     // ngHtml2JsPreprocessor: {
@@ -51,7 +57,7 @@ module.exports = function(config){
 
     browsers: ['PhantomJS'],
 
-    singleRun: true
+    singleRun: false
 
 
   });
