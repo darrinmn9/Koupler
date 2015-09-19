@@ -4,7 +4,6 @@ var helpers = require('./helpers.js');
 
 
 module.exports = function (app, express) {
-  console.log("in Middleware!");
   var coupleRouter = express.Router();
   var activityRouter = express.Router();
   var profileRouter = express.Router();
@@ -16,8 +15,8 @@ module.exports = function (app, express) {
   app.use(bodyParser.json());
 
   // Render client/index.html upon receiving request
-  app.use(express.static(__dirname + './../../client'));
-  // app.use(express.static(__dirname + './../../build'));
+  // app.use(express.static(__dirname + './../../client'));
+  app.use(express.static(__dirname + './../../build'));
   app.use(express.static(__dirname + './../assets'));
 
   app.use('/couples', coupleRouter);
